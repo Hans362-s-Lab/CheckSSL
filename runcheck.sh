@@ -8,11 +8,17 @@ cat ./tmp/ca.info | grep 'issuer: ' >> ./tmp/${1}.info
 cat ./tmp/ca.info | grep 'SSL certificate verify' >> ./tmp/${1}.info
 cat ./tmp/ca.info | grep 'subject: ' >> ./tmp/${1}.info
 
-sed -i 's|\* \t start date: ||g' ./tmp/${1}.info
-sed -i 's|\* \t expire date: ||g' ./tmp/${1}.info
-sed -i 's|\* \t issuer: ||g' ./tmp/${1}.info
-sed -i 's|\* \t SSL certificate verify ||g' ./tmp/${1}.info
-sed -i 's|\* \t subject: ||g' ./tmp/${1}.info
+#sed -i 's|\* \t start date: ||g' ./tmp/${1}.info
+#sed -i 's|\* \t expire date: ||g' ./tmp/${1}.info
+#sed -i 's|\* \t issuer: ||g' ./tmp/${1}.info
+#sed -i 's|\* \t SSL certificate verify ||g' ./tmp/${1}.info
+#sed -i 's|\* \t subject: ||g' ./tmp/${1}.info
+
+sed -i 's/\*  start date: //g' ./tmp/${1}.info
+sed -i 's/\*  expire date: //g' ./tmp/${1}.info
+sed -i 's/\*  issuer: //g' ./tmp/${1}.info
+sed -i 's/\*  SSL certificate verify //g' ./tmp/${1}.info
+sed -i 's/\*  subject: //g' ./tmp/${1}.info
 
 start=$(sed -n '1p' ./tmp/${1}.info)
 expire=$(sed -n '2p' ./tmp/${1}.info)
@@ -42,7 +48,7 @@ if [ $expirestamp \< $nowstamp ]; then
 elif [ $expireday \< 10 ]; then
     echo '"status": "Soon Expired",' >> ./tmp/${1}.json
     echo '"statuscolor": "warning",' >> ./tmp/${1}.json
-elif [ "$status" = "ok." ]; then
+elif [ $status = "ok." ]; then
     echo '"status": "Valid",' >> ./tmp/${1}.json
     echo '"statuscolor": "success",' >> ./tmp/${1}.json
 else
