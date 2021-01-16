@@ -34,4 +34,4 @@ jobs:
           publish_branch: master
           publish_dir: ./output
           destination_dir: ssl
-          force_orphan: true
+          force_orphan: false
