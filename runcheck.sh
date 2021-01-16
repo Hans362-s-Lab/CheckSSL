@@ -42,7 +42,7 @@ if [ $expirestamp \< $nowstamp ]; then
 elif [ $expireday \< 10 ]; then
     echo '"status": "Soon Expired",' >> ./tmp/${1}.json
     echo '"statuscolor": "warning",' >> ./tmp/${1}.json
-elif [ $status = "ok." ]; then
+elif [ "$status" = "ok." ]; then
     echo '"status": "Valid",' >> ./tmp/${1}.json
     echo '"statuscolor": "success",' >> ./tmp/${1}.json
 else

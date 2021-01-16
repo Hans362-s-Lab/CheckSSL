@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    container: 'ubuntu:trusty'
+    container: 'ubuntu:16.04'
 
     steps:
       - name: Checkout
