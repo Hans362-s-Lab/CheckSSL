@@ -14,12 +14,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      
+
+      - name: Setup timezone
+        uses: zcong1993/setup-timezone@master
+        with:
+          timezone: Asia/Shanghai
+
       - name: Generate
         run: |
           chmod +x ./checker.sh
           ./checker.sh hans362.cn www.hans362.cn blog.hans362.cn friends.hans362.cn lab.hans362.cn static.hans362.cn storage.hans362.cn status.hans362.cn
           cp ./index.html output/
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
