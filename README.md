@@ -9,13 +9,14 @@
 ## Demo
 
 https://lab.skk.moe/ssl
+https://lab.hans362.cn/ssl
 
 ## Usage
 
 First clone this repo:
 
 ```bash
-$ git clone https://github.com/SukkaW/CheckSSL.git
+$ git clone https://github.com/Hans362-s-Lab/CheckSSL.git
 $ cd CheckSSL
 ```
 
@@ -73,6 +74,10 @@ Here is an exmaple of `ct.json`:
 > you can work with css framework (such as Bootstrap) using `class="text-${statuscolor}"`
 
 - **remain** - How many days before your ssl expired
+
+## Use with GitHub Actions
+
+Simply fork this repository and then edit `.github/workflows/deploy.yml` based on your needs.
 
 ## Author
 
