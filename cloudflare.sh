@@ -55,4 +55,5 @@ echo $args > tmp
 done
 rm -rf namelist
 cc=`cat tmp`
+rm -rf tmp
 ./checker.sh "$cc"
