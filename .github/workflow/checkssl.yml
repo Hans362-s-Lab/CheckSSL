@@ -4,7 +4,7 @@ name: SSL Status Update Automatically
 on: 
   push:
   schedule: 
-    - cron: '0 */2 * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   build:
