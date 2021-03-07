@@ -1,14 +1,15 @@
 # CheckSSL
 
-:lock:Check your site's SSL status
+:lock: Check your site's SSL status
 
-[![Author](https://img.shields.io/badge/Author-Sukka-b68469.svg?style=flat-square)](https://skk.moe)
-![Travis](https://img.shields.io/travis/SukkaLab/ssl.svg?style=flat-square)
-[![License](https://img.shields.io/github/license/sukkaw/CheckSSL.svg?style=flat-square)](./LICENSE)
+[![Author](https://img.shields.io/badge/Author-Sukka-b68469.svg)](https://skk.moe)
+[![SSL Status Update Automatically](https://github.com/Hans362-s-Lab/CheckSSL/actions/workflows/checkssl.yml/badge.svg)](https://github.com/Hans362-s-Lab/CheckSSL/actions/workflows/checkssl.yml)
+[![License](https://img.shields.io/github/license/sukkaw/CheckSSL.svg)](./LICENSE)
 
 ## Demo
 
 https://lab.skk.moe/ssl
+
 https://lab.hans362.cn/ssl
 
 ## Usage

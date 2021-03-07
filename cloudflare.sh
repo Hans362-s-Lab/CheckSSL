@@ -6,7 +6,7 @@ echo "[INFO] Getting A Records from CloudFlare..."
 curl -X GET "https://api.cloudflare.com/client/v4/zones/08b55de26fc282481683d62469d7ffba/dns_records?type=A&page=1&per_page=100&order=name&direction=asc&match=all" -H "$email" -H "$key" -H "Content-Type: application/json" >cloudflare-tmp.json
 count=$(cat cloudflare-tmp.json | jq '.result_info.count')
 echo "[INFO] Total count: "$count
-for ((i = 1; i < $count; i++)); do
+for ((i = 1; i <= $count; i++)); do
     get_domain="cat cloudflare-tmp.json | jq '.result["$i"].name'"
     domain=$(eval $get_domain)
     echo $domain >tmp
@@ -23,7 +23,7 @@ echo "[INFO] Getting AAAA Records from CloudFlare..."
 curl -X GET "https://api.cloudflare.com/client/v4/zones/08b55de26fc282481683d62469d7ffba/dns_records?type=AAAA&page=1&per_page=100&order=name&direction=asc&match=all" -H "$email" -H "$key" -H "Content-Type: application/json" >cloudflare-tmp.json
 count=$(cat cloudflare-tmp.json | jq '.result_info.count')
 echo "[INFO] Total count: "$count
-for ((i = 1; i < $count; i++)); do
+for ((i = 1; i <= $count; i++)); do
     get_domain="cat cloudflare-tmp.json | jq '.result["$i"].name'"
     domain=$(eval $get_domain)
     echo $domain >tmp
@@ -40,7 +40,7 @@ echo "[INFO] Getting CNAME Records from CloudFlare..."
 curl -X GET "https://api.cloudflare.com/client/v4/zones/08b55de26fc282481683d62469d7ffba/dns_records?type=CNAME&page=1&per_page=100&order=name&direction=asc&match=all" -H "$email" -H "$key" -H "Content-Type: application/json" >cloudflare-tmp.json
 count=$(cat cloudflare-tmp.json | jq '.result_info.count')
 echo "[INFO] Total count: "$count
-for ((i = 1; i < $count; i++)); do
+for ((i = 1; i <= $count; i++)); do
     get_domain="cat cloudflare-tmp.json | jq '.result["$i"].name'"
     domain=$(eval $get_domain)
     echo $domain >tmp
